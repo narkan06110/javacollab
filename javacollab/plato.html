@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="openspace.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/bootstrap.min.css" >
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="style/ProjetJ.css" rel="stylesheet">
+    <link href="style/buro.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script>
     $( function() {
       $( "#datepicker" ).datepicker();
@@ -16,40 +22,141 @@
 <body>
     <aside>
         <div class="top">
-        <ul>
-            <li><a href="ProjetJ.html">Accueil</a></li>
-            <li><a href="ProjetJ.html">Connexion</a></li>
-            <li><a href="ProjetJ.html">Réserver</a></li>
-            <li><a href="ProjetJ.html">Ajouter une Salle</a></li>
-            <li><a href="ProjetJ.html">Récap Journalier</a></li>
-        </ul>
-        <p id="reservation">
-            Vos Réservation : 
-        </p>
+            <ul>
+                <li><a href="ProjetJ.html">Accueil</a></li>
+                <li><a href="ProjetJ.html">Connexion</a></li>
+                <li><a href="ProjetJ.html">Réserver</a></li>
+                <li><a href="ProjetJ.html">Ajouter une Salle</a></li>
+                <li><a href="ProjetJ.html">Récap Journalier</a></li>
+            </ul>
+            <p id="reservation">
+                Vos Réservation : 
+            </p>
         </div>
         <div class='bottom'>
           <input type="date" value="2020-01-01" min="2020-01-01" max="2042-12-31">
         </div>
-        </aside>
-        <article>
-            <h1> Plato</h1>
-            <div class="salle">
-                <br>
-                <br>
-                <img class="photo" src="placeholder.png" width="400" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, labore! Itaque cum, accusamus, asperiores aliquam porro earum aspernatur mollitia amet totam et recusandae ex repellat pariatur quis eveniet ab illum?
-                </p>
-                <br><br>
-                <button class="reserver"
-            type="button">
-        Réserver
-    </button>
-    <br>
-    <br>
-            </div>
+    </aside>
+    <article>
+        <div id="part1">
+        <h1>
+            Plato
+        </h1>
+        <div class="salle">
+            <img class="photo" src="img/placeholder.png" width="400" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde accusantium fugit modi neque est eos delectus velit maiores esse nesciunt ex omnis accusamus sit architecto, iste odio fugiat! Nostrum, minus. 
+            </p>
+            <button type="button" class="btn btn-lg btn-block btn-primary" onclick="res()">réservation</button>
+        </div>
+    </div>
+        <form method="POST" action="plato.php"  id="form">
+        <div id="Bloc-buroTitle">
+            <h1 id="buroTitle">
+                Plato
+            </h1>
+        </div>
+        <br>
+    <div id="gauche">
+        <div id=bloc-nom>
+            <p id="nom">Nom de réservation : </p>
+            <input type="text" name="nom" id="nom" />
+        </div>
+<div id="reser">
+            <p id="heure">De :</p>
+            <select name="heures1" id="heure1">
+                <option value="" selected>--Choisissez l'heure de début--</option>
+                <option onclick="heure8()" id="1valeur1"value="08H30">08H30</option>
+                <option onclick="heure9()"id="1valeur2"value="09H30">09H30</option>
+                <option onclick="heure10()"id="1valeur3"value="10H30">10H30</option>
+                <option onclick="heure11()"id="1valeur4"value="11H30">11H30</option>
+                <option onclick="heure12()"id="1valeur5"value="12H30">12H30</option>
+                <option onclick="heure13()"id="1valeur6"value="13H30">13H30</option>
+                <option onclick="heure14()"id="1valeur7"value="14H30">14H30</option>
+                <option onclick="heure15()"id="1valeur8"value="15H30">15H30</option>
+            </select>
 
-            <p> </p>
-    
-        </article>
+            <p>à : </p>
+            <select name="heures28" id="heure8" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur1"value="09H30">09H30</option>
+                <option id="2valeur2"value="10H30">10H30</option>
+                <option id="2valeur3"value="11H30">11H30</option>
+                <option id="2valeur4"value="12H30">12H30</option>
+                <option id="2valeur5"value="13H30">13H30</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+            
+            <select name="heures29" id="heure9" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur2"value="10H30">10H30</option>
+                <option id="2valeur3"value="11H30">11H30</option>
+                <option id="2valeur4"value="12H30">12H30</option>
+                <option id="2valeur5"value="13H30">13H30</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures210" id="heure10" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur3"value="11H30">11H30</option>
+                <option id="2valeur4"value="12H30">12H30</option>
+                <option id="2valeur5"value="13H30">13H30</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures211" id="heure11" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur4"value="12H30">12H30</option>
+                <option id="2valeur5"value="13H30">13H30</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures212" id="heure12" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur5"value="13H30">13H30</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures213" id="heure13" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur6"value="14H30">14H30</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures214" id="heure14" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>
+                <option id="2valeur7"value="15H30">15H30</option>
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+
+            <select name="heures215" id="heure15" height="30px">
+                <option value="" selected>--Choisissez l'heure de fin--</option>   
+                <option id="2valeur8"value="16H30">16H30</option>
+            </select>
+            </div>
+    </div>
+    <div id="droite">
+            <div id="commentaire">
+                <p>Commentaire : </p>
+            <textarea name="com" id="com"></textarea>
+            </div>
+    </div>
+        <div id="valid">
+            <input type="submit" value="Valider la réservation">
+        </div>
+        </form>
+    </article>
+    <script src="js/buro.js"></script>
 </body>
 </html>
